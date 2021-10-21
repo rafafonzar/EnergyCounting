@@ -2,6 +2,7 @@ let energy = document.getElementById("energyNumber")
 let energyValue = parseInt(energy.innerHTML)
 let roundNumberChange = document.getElementById("roundNumber")
 let roundValue = parseInt(roundNumberChange.innerHTML)
+const copiedClipboard = "0x2B9cE3e0f8Da30C325B111F7a898886489bD0C41"
 
 // Funcao 1 Click round
 function clickRound() {
@@ -12,7 +13,7 @@ function clickRound() {
             roundValue++
             roundNumberChange.innerHTML = roundValue
             energy.innerHTML = energyValue
-        } else if(energyValue > 10) {
+        } else if (energyValue > 10) {
             energyValue = 10
             energy.innerHTML = energyValue
         }
@@ -44,6 +45,21 @@ function clickMinus() {
 // Update html
 function updateHTML() {
 }
+
+
+
+function copyWallet() {
+    const donateButton = document.getElementById("donateButton")
+    donateButton.addEventListener("click", () => {
+        console.log(copiedClipboard)
+        navigator.clipboard.writeText(copiedClipboard)
+        alert(`Wallet copied: ${copiedClipboard}
+Thank you for your colaboration!`);
+
+    })    
+}
+
 clickRound()
 clickPlus()
 clickMinus()
+copyWallet()
