@@ -11,6 +11,7 @@
 .roundButtons {
     width: 40px;
     padding-top: 20px;
+    cursor: pointer;
 }
 
 #plusEnergyBtn {
@@ -33,4 +34,10 @@
 
 .energyCounter {
     font-size: 60px;
+}
+
+.img-help {
+    max-width: 790px;
+    width: 100%;
+    height: auto;
 }
