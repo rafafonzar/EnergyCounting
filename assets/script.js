@@ -1,22 +1,16 @@
-let energy = document.getElementById("energyNumber")
-let energyValue = parseInt(energy.innerHTML)
-let roundNumberChange = document.getElementById("roundNumber")
-let roundValue = parseInt(roundNumberChange.innerHTML)
-const copiedClipboard = "0x2B9cE3e0f8Da30C325B111F7a898886489bD0C41"
+let energyElement = document.getElementById("energyNumber")
+let energyValue = parseInt(energyElement.innerHTML)
+let roundElement = document.getElementById("roundNumber")
+let roundValue = parseInt(roundElement.innerHTML)
+const myWallet = "0x2B9cE3e0f8Da30C325B111F7a898886489bD0C41"
 
 // Funcao 1 Click round
 function clickRound() {
     const nextRoundBtn = document.getElementById("nextRoundBtn")
     nextRoundBtn.addEventListener("click", () => {
-        if (energyValue < 10) {
-            energyValue = energyValue + 2
-            roundValue++
-            roundNumberChange.innerHTML = roundValue
-            energy.innerHTML = energyValue
-        } else if (energyValue > 10) {
-            energyValue = 10
-            energy.innerHTML = energyValue
-        }
+        roundValue++;
+        energyValue = Math.min(energyValue + 2, 10);
+        updateHTML();
     }
     )
 }
@@ -24,26 +18,23 @@ function clickRound() {
 function clickPlus() {
     const plusEnergyBtn = document.getElementById("plusEnergyBtn")
     plusEnergyBtn.addEventListener("click", () => {
-        if (energyValue < 10) {
-            energyValue++
-            energy.innerHTML = energyValue
-        }
+        energyValue = Math.min(energyValue + 1, 10);
+        updateHTML();
     })
 }
 // Funcao 3 Click -
 function clickMinus() {
     const minusEnergyBtn = document.getElementById("minusEnergyBtn")
     minusEnergyBtn.addEventListener("click", () => {
-        if (energyValue > 0) {
-            energyValue--
-            energy.innerHTML = energyValue
-        }
-        console.log(energyValue)
+        energyValue = Math.max(energyValue - 1, 0);
+        updateHTML()
     })
 }
 
 // Update html
 function updateHTML() {
+    energyElement.innerHTML = energyValue;
+    roundElement.innerHTML = roundValue;
 }
 
 
@@ -51,9 +42,9 @@ function updateHTML() {
 function copyWallet() {
     const donateButton = document.getElementById("donateButton")
     donateButton.addEventListener("click", () => {
-        console.log(copiedClipboard)
-        navigator.clipboard.writeText(copiedClipboard)
-        alert(`Wallet copied: ${copiedClipboard}
+        console.log(myWallet)
+        navigator.clipboard.writeText(myWallet)
+        alert(`Wallet copied: ${myWallet}
 Thank you for your colaboration!`);
 
     })    
