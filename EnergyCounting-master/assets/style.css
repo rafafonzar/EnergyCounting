@@ -1,0 +1,47 @@
+.caixaRound {
+    max-width: 215px;
+    
+}
+
+#nextRoundBtn {
+    max-width: 207px;
+    width: 204px;
+}
+
+.roundButtons {
+    width: 40px;
+    padding-top: 20px;
+    cursor: pointer;
+}
+
+#plusEnergyBtn {
+    padding-bottom: 20px;
+}
+
+.cardRight {
+    height: 100%;
+}
+
+.energyWrapper {
+    position: relative;
+}
+
+#energyNumber {
+    position: absolute;
+    top: 35%;
+    left: 45%;
+}
+
+.energyCounter {
+    font-size: 60px;
+}
+
+.img-help {
+    max-width: 790px;
+    width: 100%;
+    height: auto;
+}
+
+.donateBtn {
+    max-width: 207px;
+}
