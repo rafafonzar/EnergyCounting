@@ -30,6 +30,22 @@ function clickMinus() {
         updateHTML()
     })
 }
+// Funcao 4 Undo
+function clickUndo() {
+    const undoRoundBtn = document.getElementById("undoRoundBtn")
+    undoRoundBtn.addEventListener("click", () => {
+        roundValue--;
+        energyValue = Math.min(energyValue - 2, 10);
+        updateHTML();
+})
+}
+// Funcao 5 Restart
+function clickResetGame() {
+    const resetGameBtn = document.getElementById("resetGameBtn")
+    resetGameBtn.addEventListener("click", () => {
+        window.location.href = "./index.html";
+    })
+}
 
 // Update html
 function updateHTML() {
@@ -37,14 +53,12 @@ function updateHTML() {
     roundElement.innerHTML = roundValue;
 }
 
-
-
 function copyWallet() {
     const donateButton = document.getElementById("donateButton")
     donateButton.addEventListener("click", () => {
         console.log(myWallet)
         navigator.clipboard.writeText(myWallet)
-        alert(`Wallet copied: ${myWallet}
+        alert(`Metamask Wallet copied: ${myWallet}
 Thank you for your colaboration!`);
 
     })    
@@ -54,3 +68,5 @@ clickRound()
 clickPlus()
 clickMinus()
 copyWallet()
+clickUndo()
+clickResetGame()
