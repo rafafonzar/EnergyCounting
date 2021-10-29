@@ -36,19 +36,19 @@
                             3
                             </h1>
                     </div>
-                    <button id="nextRoundBtn" type="button" class="btn btn-primary mt-2">Next Round</button>
+                    <button id="nextRoundBtn" type="button" class="btn btn-primary mt-2" onclick="nextRoundClick()">Next Round</button>
                     <div>
                         <button id="resetGameBtn" type="button"
-                            class="btn btn-outline-primary btn-sm mt-2 align-self-start">New game</button>
+                            class="btn btn-outline-primary btn-sm mt-2 align-self-start" onclick="resetGameClick()">New game</button>
                         <button id="undoRoundBtn" type="button"
-                            class="btn btn-danger btn-sm mt-2 align-self-end">Undo Round</button>
+                            class="btn btn-danger btn-sm mt-2 align-self-end" onclick="undoRoundClick()">Undo Round</button>
                     </div>
                 </div>
                 <div class="container">
                     <div class="cardRight d-flex align-items-center">
                         <div class="roundButtons d-flex flex-column">
-                            <img src="./assets/VectorplusBtn.svg" alt="" id="plusEnergyBtn">
-                            <img src="./assets/VectorminusBtn.svg" alt="" id="minusEnergyBtn">
+                            <img src="./assets/VectorplusBtn.svg" alt="" id="plusEnergyBtn" onclick="addEnergyClick()">
+                            <img src="./assets/VectorminusBtn.svg" alt="" id="minusEnergyBtn" onclick="removeEnergyClick()">
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                         <div class="mb-3">
                             If you would like to support this site, consider donating! ❤❤
                         </div>
-                        <button id="donateButton" class="btn btn-outline-success donateBtn">Donate!</button>
+                        <button id="donateButton" class="btn btn-outline-success donateBtn" onclick="copyWallet()">Donate!</button>
                     </div>
                 </div>
             </div>
