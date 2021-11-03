@@ -43,12 +43,6 @@ function updateHTML() {
 
 // Funcao 6 Copy Wallet
 function copyWallet() {
-  const donateButton = document.getElementById("donateButton")
-  donateButton.addEventListener("click", () => {
-    console.log(myWallet)
     navigator.clipboard.writeText(myWallet)
-    alert(`Metamask Wallet copied: ${myWallet}
-Thank you for your colaboration!`);
-
-  })
+    alert(`Metamask Wallet copied: ${myWallet}.\nThank you for your colaboration!`);
 }
